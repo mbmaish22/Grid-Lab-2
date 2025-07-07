@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #7da3d8;
+}
+
+.news {
+    width: 100px;
+    height: 100px;
+    background-image: url('dailynews.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation-name: bouncey;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(20, 50px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
+    margin-top: 120px;
+}
+
+header {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    background-color: #369bf5;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.breaking_news {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    background-color: #66a2da;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.newsfeed {
+    animation-name: slidein;
+    animation-duration: 10s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+.newsFont {
+    font-size: large;
+    font-weight: bold;
+}
+
+aside {
+    grid-column: 1 / 5;
+    grid-row: 4 / 6;
+    background-color: #cfd8e6;
+    padding: 10px 30px;
+    font-size: medium;
+}
+
+article {
+    grid-column: 1 / 5;
+    grid-row: 6 / 16;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.infoBox {
+    width: 200px;
+    height: 150px;
+    background-color: #a1bfd9;
+    border: 4px solid #0a3459;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.infoBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+footer {
+    grid-column: 1 / 5;
+    grid-row: 16 / 17;
+    background-color: #66a2da;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+    font-family: "Comic Sans MS", cursive;
+}
+
+.zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 800px) {
+    article {
+        grid-template-columns: 1fr;
+    }
+    .news {
+        position: static;
+        margin: 10px auto;
+    }
+}
